@@ -1,16 +1,20 @@
 package de.thro.inf.prg3.a06.model;
 
+import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
+import com.google.gson.Gson;
 /**
  * @author Peter Kurfer
  * Created on 11/9/17.
  */
 public final class Joke {
+	@SerializedName("id")
 	private int number;
+	@SerializedName("joke")
 	private String content;
+	@SerializedName("rubric")
 	private String[] rubrics;
 
 	public int getNumber() {
@@ -20,6 +24,24 @@ public final class Joke {
 	public String getContent() {
 		return content;
 	}
+
+	public String[] getRubrics(){return rubrics;}
+
+	public void setNumber(int n){
+		number = n;
+	}
+
+	public void setContent(String c){
+		content = c;
+	}
+
+	public void setRubrics(String [] r){
+		rubrics = r;
+	}
+
+
+
+
 
 	@Override
 	public boolean equals(Object o) {
